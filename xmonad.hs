@@ -70,6 +70,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
  
+    -- Launch gmrun
+    , ((modm .|. shiftMask, xK_p), spawn "gmrun")
+
+    -- Lock screen
+    , ((modm,             xK_z), spawn "xscreensaver-command -lock")
+
     -- launch alpine in urxvt
     , ((modm,               xK_a     ), spawn "urxvt -e alpine")
  
