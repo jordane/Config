@@ -29,7 +29,7 @@ import qualified Data.Map        as M
 myModMask = mod4Mask
 myTerminal = "x-terminal-emulator"
 myFocusFollowsMouse = True
-myBorderWidth = 0
+myBorderWidth = 1 
 myWorkspaces = ["1:term", "2:web", "3:code"] ++ map show [4..8] ++ ["9:float"]
 ------------------------------------------------------------------------
 -- Custom functions go here.

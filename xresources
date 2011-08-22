@@ -1,6 +1,6 @@
 URxvt.depth: 32
 URxvt.scrollBar: off
-URxvt.foreground: green
+URxvt.foreground: orange
 URxvt.jumpScroll: true
 URxvt.transparent: true
 URxvt.shading: 40

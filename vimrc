@@ -8,10 +8,11 @@ syn on
 colorscheme elflord
 set number
 set spell
+set incsearch
+set hlsearch
 
 au BufRead,BufNewFile *.rb,*.rhtml set tabstop=2
 au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
-au BufRead,BufNewFile *.c, *.cpp, *.java, *.js, *.html noremap % v%
 autocmd BufWritePost *.py !python -t -c  "compile(open('<afile>').read(), '<afile>', 'exec')"
 
 :highlight ExtraWhitespace  ctermbg=yellow guibg=red
@@ -29,3 +30,8 @@ match OverLength /\%81v.\+/
 :highlight SpellRare term=underline cterm=underline
 :highlight clear SpellLocal
 :highlight SpellLocal term=underline cterm=underline
+
+"winmanager settings
+:map <c-w><c-t> :WMToggle<cr>
+:map <c-w><c-f> :FirstExplorerWindow<cr>
+:map <c-w><c-b> :BottomExplorerWindow<cr>
