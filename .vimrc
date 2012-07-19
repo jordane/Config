@@ -12,7 +12,9 @@ set spell
 au BufRead,BufNewFile *.rb,*.rhtml set tabstop=2
 au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
 au BufRead,BufNewFile *.c, *.cpp, *.java, *.js, *.html noremap % v%
+au! BufRead,BufNewFile *.json set filetype=json
 autocmd BufWritePost *.py !python -t -c  "compile(open('<afile>').read(), '<afile>', 'exec')"
+autocmd BufWritePost *.rb !ruby -cw %
 
 :highlight ExtraWhitespace  ctermbg=yellow guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
