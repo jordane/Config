@@ -1,0 +1,36 @@
+export AUTO_VENV_LAST_DIR=""
+
+# Automatically activate a virtual env if an appropriate .venv is found.
+chpwd_auto_venv () {
+    dir=$(pwd)
+    last=""
+
+    while true; do
+        if [[ -f $dir/.venv ]]; then
+            if [[ $dir = $AUTO_VENV_LAST_DIR ]]; then
+                return 0
+            fi
+            source $dir/.venv
+            activate
+            export AUTO_VENV_LAST_DIR=$dir
+            return 0
+        fi
+        if [[ -n $last ]]; then
+            if [[ -n "$AUTO_VENV_LAST_DIR" ]]; then
+                source "${AUTO_VENV_LAST_DIR}/.venv"
+                deactivate
+                export AUTO_VENV_LAST_DIR=""
+                return 0
+            fi
+            return 0
+        fi
+        dir=$(dirname $dir)
+        if [[ "/" = $dir ]]; then
+            last=1
+        fi
+    done
+}
+
+add-zsh-hook chpwd chpwd_auto_venv
+
+#EOF vim: ft=zsh

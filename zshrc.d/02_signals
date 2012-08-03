@@ -1,0 +1,23 @@
+# This reloads my config when a signal is received.
+TRAPUSR1() {
+  source $HOME/.zshrc
+}
+
+TRAPUSR2() {
+  change_chef
+}
+# This sends the signal, either to this terminal with 'reload' or to all of
+# them with 'reload all'
+function reload() {
+  if [[ -z $1 ]]; then
+    kill -USR1 $$
+  else
+    pkill -USR1 -x zsh
+  fi
+}
+
+function chef_all() {
+  pkill -USR2 -x zsh
+  pkill -SIGALRM -x zsh
+}
+# vim: ft=zsh

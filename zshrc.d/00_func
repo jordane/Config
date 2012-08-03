@@ -1,0 +1,7 @@
+function uppercase () {
+  echo $(/usr/bin/perl -e "print uc \"$(echo $@)\";")
+}
+
+function lowercase () {
+  echo $(/usr/bin/perl -e "print lc \"$(echo $@)\";")
+}

@@ -1,0 +1,2 @@
+alias serve='twistd -n web --path .
+'
