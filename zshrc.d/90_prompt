@@ -99,11 +99,6 @@ precmd_prompt () {
 
 add-zsh-hook precmd precmd_prompt 
 
-periodic_prompt () {
-    chef_env=$(cat ~/.chef_changer)
-    pschef="%F{$(hash_color $chef_env)}$chef_env"
-}
-add-zsh-hook periodic periodic_prompt
 TMOUT=1
 TRAPALRM () {
     precmd_prompt
