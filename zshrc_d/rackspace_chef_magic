@@ -46,7 +46,7 @@ function check_ruby_syntax() {
 }
 
 function check_chef_json_syntax() {
-    /Users/jordan/.rbenv/shims/rake -I ~/git/chef -f ~/git/chef/Rakefile test_json_syntax
+    $HOME/.rbenv/shims/rake -I ~/git/chef -f ~/git/chef/Rakefile test_json_syntax
 }
 
 change_chef
