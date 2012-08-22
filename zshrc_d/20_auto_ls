@@ -9,4 +9,6 @@
 
 #add-zsh-hook chpwd chpwd_auto_ls
 
+alias lss='ls -a -1'
+
 #EOF vim: ft=zsh

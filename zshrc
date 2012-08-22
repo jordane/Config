@@ -84,7 +84,7 @@ case $TERM in
     ;;
 esac
 
-PATH="$HOME/.rbenv/shims:$HOME/bin:$PATH"
+PATH="$HOME/.rbenv/shims:$HOME/bin:/opt/local/bin:$PATH"
 
 export EDITOR="vim"
 
@@ -104,3 +104,4 @@ for file in $(ls $HOME/.zshrc.private/* | grep -ve ".swp$" | grep -ve ".bak$")
 do
     source $file
 done
+export XDG_CONFIG_HOME=$HOME"/.config/xdg"
