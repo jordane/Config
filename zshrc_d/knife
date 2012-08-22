@@ -1,1 +1,2 @@
 alias kssh='knife ssh -x jordane'
+alias knife='nocorrect knife'

@@ -1,0 +1,52 @@
+function change_chef () {
+  if [ -n $1 ]
+  then
+    source ~/.zshrc.private/$1
+  else
+    change_chef $(cat ~/.chef_changer)
+  fi
+}
+
+function reach_staging () {
+  change_chef reach_staging
+  chef_all
+}
+
+function reach_preprod () {
+  change_chef reach_preprod
+  chef_all
+}
+
+function reach_prod () {
+  change_chef reach_prod
+  chef_all
+}
+
+function tracing_prod () {
+  change_chef tracing_prod
+  chef_all
+}
+
+function check_all_syntax() {
+    file_type=$1
+    syntax_command=$2
+    for file in $(find $PWD -name "*.$file_type")
+    do
+      eval $syntax_command $file &> /dev/null
+      if [ $? -ne 0 ]
+      then
+          echo "Error with file: $file, output of syntax check is:\n"
+          eval $syntax_command $file
+      fi
+    done
+}
+
+function check_ruby_syntax() {
+    check_all_syntax "rb" "$HOME/.rbenv/shims/ruby -cw"
+}
+
+function check_chef_json_syntax() {
+    /Users/jordan/.rbenv/shims/rake -I ~/git/chef -f ~/git/chef/Rakefile test_json_syntax
+}
+
+change_chef

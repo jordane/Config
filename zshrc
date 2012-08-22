@@ -84,8 +84,7 @@ case $TERM in
     ;;
 esac
 
-PATH="$HOME/.rbenv/shims:$HOME/bin:/opt/local/bin:$PATH"
-
+export PATH="$HOME/.rbenv/shims:$HOME/bin:/opt/local/bin:$PATH:/usr/local/Cellar/rbenv/0.3.0/bin:/usr/local/sbin"
 export EDITOR="vim"
 
 #alias ls='ls --color=if-tty --group-directories-first -hF'
@@ -99,9 +98,5 @@ for file in $(ls $HOME/.zshrc.d/* | grep -ve ".swp$" | grep -ve ".bak$")
 do
     source $file
 done
-# Include private sub-.zshrc files
-for file in $(ls $HOME/.zshrc.private/* | grep -ve ".swp$" | grep -ve ".bak$")
-do
-    source $file
-done
+
 export XDG_CONFIG_HOME=$HOME"/.config/xdg"
