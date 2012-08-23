@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby -w
 
 home = ENV['HOME']
 cwd = Dir.pwd
