@@ -18,7 +18,7 @@ function git_ref_head() {
 
 function gpthis() {
   git_branch=$(git_current_branch)
-  if [ $git_branch = 'master']
+  if [ $git_branch = 'master' ]
   then
     echo "\nWon't merge branch master.\n"
   else
