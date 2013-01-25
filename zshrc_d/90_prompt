@@ -90,11 +90,11 @@ precmd_prompt () {
         psvcs=""
     fi
 
-    if [[ -z $(ssh-add -l) ]]; then
-        keychain=" "
-    else
-        keychain="%F{cyan}⚷%f"
-    fi
+#    if [[ -z $(ssh-add -l) ]]; then
+#        keychain=" "
+#    else
+#        keychain="%F{cyan}⚷%f"
+#    fi
 }
 
 add-zsh-hook precmd precmd_prompt 
