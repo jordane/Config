@@ -20,7 +20,7 @@ function gpthis() {
   git_branch=$(git_current_branch)
   if [ $git_branch = 'master' ]
   then
-    echo "\nWon't merge branch master.\n"
+    echo "\nWon't push branch master to origin.\n"
   else
     git push origin HEAD:$git_branch
   fi
