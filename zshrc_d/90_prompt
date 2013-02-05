@@ -35,6 +35,12 @@ precmd_prompt () {
     pshost="%F{$(hash_color $(hostname))}%m%f"
     psuser="%F{red}%n"
 
+    if [[ $(batp.rb) -gt 50 ]]; then
+       psbat="%F{green}$(bat.rb)"
+    else
+       psbat="%F{red}$(bat.rb)"
+    fi
+
     if [[ $lastexit -eq 0 ]]; then
         psat="%F{2}@%f"
     else
@@ -107,7 +113,7 @@ TRAPALRM () {
 
 
 PROMPT='${psuser}${psat}${pshost}> '
-#RPROMPT='${pspath}${psvcs}${keychain}${pstime}'
-RPROMPT='${pspath}${psvcs}${pschef}${pstime}'
+#RPROMPT='${pspath}${psvcs}${keychain}${pstime}${psbat}'
+RPROMPT='${psbat}${pspath}${psvcs}${pschef}${pstime}'
 
 #EOF vim: ft=zsh
