@@ -32,3 +32,4 @@ alias gcompare='open "http://github.com/$(git_current_origin)/compare/$(git_ref_
 alias knife='nocorrect knife'
 alias gpull='git pull origin $(git_current_branch)'
 alias mpr='open "https://github.com/$(git_current_origin)/pulls/$GIT_USERNAME"'
+alias git-deflate='python -c "import zlib,sys;print repr(zlib.decompress(sys.stdin.read()))"'
