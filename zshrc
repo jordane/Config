@@ -84,7 +84,7 @@ case $TERM in
     ;;
 esac
 
-export PATH="$HOME/.rbenv/shims:$HOME/bin:/opt/local/bin:$PATH:/usr/local/Cellar/rbenv/0.3.0/bin:/usr/local/sbin"
+export PATH="$HOME/.rvm/bin:/usr/local/bin:$HOME/.rbenv/shims:$HOME/bin:/opt/local/bin:/usr/local/sbin:$PATH"
 export EDITOR="vim"
 
 #alias ls='ls --color=if-tty --group-directories-first -hF'
@@ -100,3 +100,4 @@ do
 done
 
 export XDG_CONFIG_HOME=$HOME"/.config/xdg"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
