@@ -5,3 +5,7 @@ function uppercase () {
 function lowercase () {
   echo $(/usr/bin/perl -e "print lc \"$(echo $@)\";")
 }
+
+function chef_logger () {
+  ssh $1 'sudo tail -f /var/log/chef/client.log'
+}
