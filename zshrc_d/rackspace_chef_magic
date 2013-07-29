@@ -7,6 +7,16 @@ function change_chef () {
   fi
 }
 
+function maas_prod () {
+  change_chef maas_prod
+  chef_all
+}
+
+function maas_staging () {
+  change_chef maas_staging
+  chef_all
+}
+
 function reach_staging () {
   change_chef reach_staging
   chef_all
